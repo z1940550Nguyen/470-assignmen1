@@ -6,8 +6,7 @@ public class Line
     private String c;
     //constructor
     //Receives 4 integers which are the Line's start and end points.
-    public Line(int left, int top, int bottom, int right, int Thick, String color)
-    {
+    public Line(int left, int top, int bottom, int right, int Thick, String color) throws IllegalAccessException {
         setLeft (left);
         setTop (top);
         setRight(right);
@@ -16,8 +15,7 @@ public class Line
         setColor(color);
 
     }
-    public Line(TwoDPoint obj1, TwoDPoint obj2,int Thick,String color)
-    {
+    public Line(TwoDPoint obj1, TwoDPoint obj2,int Thick,String color) throws IllegalAccessException {
         this(obj1.x,obj1.y,obj2.x,obj2.y,Thick,color);
     }
     // method draw() call another method called drawline(),
@@ -38,8 +36,7 @@ public class Line
 
     }
     //method setline allow change to existing line
-    public void setLine (int left, int top, int bottom, int right,int Thick, String color)
-    {
+    public void setLine (int left, int top, int bottom, int right,int Thick, String color) throws IllegalAccessException {
         setLeft(left);
         setTop(top);
         setRight(right);
@@ -57,31 +54,28 @@ public class Line
 
         System.out.println("length = "+ Calculator(x1,x2,y1,y2)+"\n");
     }
-    public void setLeft (int left)
-    {
+    public void setLeft (int left) throws IllegalAccessException {
         if (left < 0 || left >639)
-            x1 = 0;
+            throw new IllegalAccessException("Invalid Argument");
+
         else
-            x1= left;
+            this.x1= left;
     }
-    public void setTop(int top)
-    {
+    public void setTop(int top) throws IllegalAccessException {
         if (top < 0|| top > 479)
-            y1=0;
+            throw new IllegalAccessException("Invalid Argument");
         else
             y1 = top;
     }
-    public void setBottom(int bottom)
-    {
+    public void setBottom(int bottom) throws IllegalAccessException {
         if(bottom >479|| bottom <0)
-            y2=0;
+            throw new IllegalAccessException("Invalid Argument");
         else
             y2= bottom;
     }
-    public void setRight(int right)
-    {
+    public void setRight(int right) throws IllegalAccessException {
         if (right >639 || right <0)
-            x2=0;
+            throw new IllegalAccessException("Invalid Argument");
         else
             x2=right;
     }

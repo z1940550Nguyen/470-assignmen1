@@ -2,10 +2,10 @@ public class TwoDPoint {
     public int x,y;
 
     //constructor
-    public void TwoDPoint (int num1, int num2)
+    public TwoDPoint (int x, int y)
     {
-        this.x=num1;
-        this.y=num2;
+        this.x=x;
+        this.y=y;
     }
 
 }
