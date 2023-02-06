@@ -7,5 +7,4 @@ public class TwoDPoint {
         this.x=x;
         this.y=y;
     }
-
 }
